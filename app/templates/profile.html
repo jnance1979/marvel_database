@@ -1,0 +1,46 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h2 style="margin-bottom: 40px;">profile</h2>
+
+<div class="col-12">
+    <div class="user">
+        <h1 style="color:gold"><strong>{{ current_user.name }}</strong></h1>
+    </div>
+</div>
+<hr>
+<h2>your hero collection:</h2>
+
+<hr>
+
+<div class="row">
+
+{% for h in heroes %}
+    <div class="card col-3">
+        <h4 style="text-align:center" class="card-title">{{ h.name }}</h4>
+        <img class="card-img-top" src="{{ h.image }}.jpg" alt="">
+        <div class="card-body">
+            <p class="card-text">{{ h.description }}</p>
+            <a style="margin-bottom: 10px;" class="btn btn-warning" href="{{ url_for('remove_hero', name=h.name) }}">remove from your collection</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% if heroes %}
+<div class="row">
+    <div class="col-10">
+        <a style="margin-bottom: 40px; margin-top: 20px;" class="btn btn-warning" href="{{ url_for('choose') }}">add another hero to your collection</a>
+    </div>
+</div>
+{% endif %}
+
+{% if not heroes %}
+<div class="row">
+    <div class="col-10">
+        <a style="margin-bottom: 40px;" class="btn btn-warning" href="{{ url_for('choose') }}">add a hero to your
+            collection</a>
+    </div>
+</div>
+{% endif %}
+{% endblock %}

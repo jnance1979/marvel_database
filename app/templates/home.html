@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+        <h1 style="color:gold">the home for your hero collection</h1>
+        <hr>
+        <div class="hero-image">
+            <img src="/static/marvel.png">
+        </div>
+{% if current_user.is_anonymous %}
+        <h3 style="color:gold">login or register to add heroes to your collection!</h1>
+{% endif %}
+<style>
+    body {
+        background-color: black;
+    }
+    h1 {
+        text-align: center;
+    }
+    h3 {
+        text-align: center;
+    }
+
+</style>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h1>Current Hero:</h1>
+<h1><strong> {{ name }}</strong></h1>
+<h5><strong>Description:</strong> {{ description }}</h5>
+<h5><strong>Comics appeared in:</strong> {{ comics }}</h5>
+<img style="margin-bottom: 40px;" src="{{ image }}.jpg" width="300" alt="">
+
+<a class="btn btn-warning" href="{{ url_for('add', name=name) }}">click to add this hero to your collection</a>
+<br>
+<a style="margin-bottom: 40px;" class="btn btn-warning" href="{{ url_for('choose') }}">click to ignore and return to choosing</a>
+
+{% endblock %}

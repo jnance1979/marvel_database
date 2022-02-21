@@ -1,0 +1,30 @@
+body {
+    background-color: #F0131E;
+    flex-direction: column;
+    justify-content: space-evenly;
+    min-height: 100vh;
+}
+
+.hero-image {
+    display: flex;
+    justify-content: center;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.hero-image img {
+    width: 35%
+}
+
+.user {
+    display: flex;
+    background-color: black;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.card-body {
+    text-align: center;
+    padding:0px;
+}
